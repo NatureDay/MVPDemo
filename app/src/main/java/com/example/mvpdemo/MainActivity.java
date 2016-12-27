@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements TaskContract.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPresenter = new TaskPresenter(this);
+        //mPresenter = new TaskPresenter(this);
 
         findViewById(R.id.btn_toast).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity implements TaskContract.View
         Toast.makeText(this, "这是MVP模式", Toast.LENGTH_SHORT).show();
     }
 
-//    @Override
-//    public void setPresenter(TaskContract.Presenter presenter) {
-//        mPresenter = presenter;
-//    }
+    @Override
+    public void setPresenter(TaskContract.Presenter presenter) {
+        mPresenter = (TaskPresenter) presenter;
+    }
 }
