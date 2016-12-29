@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements TaskContract.View
                 mPresenter.click();
             }
         });
+
+        new TaskPresenter(this);
     }
 
     @Override
